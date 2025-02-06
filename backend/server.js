@@ -1,11 +1,16 @@
 import express from "express";
+import dotenv from "dotenv";
+import { connectDB } from "./db.js";
+
+dotenv.config();
 
 const app=express();
 
-app.listen(5000, ()=>{
-    console.log(`Server is running on PORT: http://localhost:5000`);
+app.listen(process.env.PORT, ()=>{
+    console.log(`Server is running on PORT: http://localhost:${process.env.PORT}`);
+    connectDB();
 })
 
-app.get("/",(req,res)=>{
+app.get("/products",(req,res)=>{
     res.send("homePage");
 })
