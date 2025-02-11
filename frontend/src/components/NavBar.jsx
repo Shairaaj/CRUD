@@ -5,6 +5,7 @@ import {PlusSquareIcon} from "@chakra-ui/icons";
 import {IoMoon} from "react-icons/io5";
 import {LuSun} from "react-icons/lu";
 import { useProductStore } from "../store/product";
+
 const NavBar = () => {
     const {colorMode, toggleColorMode}= useColorMode();
     return (
